@@ -1,1 +1,6 @@
 <button (click)="retrieveNews()">Retrieve News</button>
+<div *ngIf="news">
+    <div *ngFor="let new of news">
+        <h1>{{new.title}}</h1>
+    </div>
+</div>
