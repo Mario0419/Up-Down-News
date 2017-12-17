@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'app';
   Title1 = 'Mario';
-  
+
   do() {
     console.log("Do");
   }

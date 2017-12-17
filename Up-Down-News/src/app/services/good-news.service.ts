@@ -1,15 +1,19 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http'
+import { HttpClient } from '@angular/common/http';
+
+
+
 
 @Injectable()
-export class GoodNewsService(){
-  constructor(){
+export class GoodNewsService {
+
+  constructor(private http: HttpClient){
 
   }
 
   rssHtml: string = 'https://www.goodnewsnetwork.org/category/';
 
-  categories: string[] = {
+  categories: string[] = [
     'news-health/feed/',
     'gnn-your-blogs/feed/',
     'news-business/feed/',
@@ -20,15 +24,13 @@ export class GoodNewsService(){
     'culture-celebrities/feed/',
     'gnn-uplift,uplift-good-ideas,uplift-good-laugh,uplift-heroes,uplift-inspiring,uplift-kids,uplift-pets,uplift-top-videos/feed/'
 
+  ]
 
-
-
-
-  }
-
-
-  retrieveGoodNews(){
-
+  retrieveGoodNews(category: string):Observable<string>{
+    let url = this.rssHtml + category;
+    return this.http.get(url,{
+      responseType: 'text'
+    });
   }
 
 }
