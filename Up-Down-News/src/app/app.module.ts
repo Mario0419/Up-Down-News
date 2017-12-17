@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
+import { NewYorkTimesService } from './services/new-york-times';
 
 
 @NgModule({
@@ -13,7 +14,7 @@ import { AppComponent } from './app.component';
     BrowserModule,
     NgbModule.forRoot()
   ],
-  providers: [],
+  providers: [NewYorkTimesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
