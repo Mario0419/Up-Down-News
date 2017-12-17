@@ -6,11 +6,12 @@ import { NewYorkTimesService } from '../services/new-york-times';
     templateUrl:  './news-list.component.html',
     styleUrls: [
         './news-list.component.css'
-    ]
+    ],
+    providers: [NewYorkTimesService]
 })
 export class NewsListComponent {
     
-    constructor(newyorktimesService: NewYorkTimesService) {
+    constructor(private newyorktimesService: NewYorkTimesService) {
 
     }
 
