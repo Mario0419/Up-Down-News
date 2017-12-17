@@ -5,10 +5,12 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
 import { NewYorkTimesService } from './services/new-york-times';
 import { HttpClientModule } from '@angular/common/http';
+import { NewsListComponent } from './news-list/news-list.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NewsListComponent
   ],
   imports: [
     BrowserModule,

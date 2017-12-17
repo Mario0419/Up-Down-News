@@ -17,6 +17,6 @@ export class NewsListComponent {
 
 
     retrieveNews() {
-        this.newyorktimesService.retrieve();
+        this.newyorktimesService.retrieveNews("ProFootball");
     }
 }
