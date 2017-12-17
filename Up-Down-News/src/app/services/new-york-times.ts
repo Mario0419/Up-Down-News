@@ -20,7 +20,7 @@ export class NewYorkTimesService {
         'Tennis',
         'Americas',
     ]
-    
+
     constructor(private http: HttpClient) {
 
     }
