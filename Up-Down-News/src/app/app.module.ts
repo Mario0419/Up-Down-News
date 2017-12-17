@@ -6,10 +6,12 @@ import { AppComponent } from './app.component';
 import { NewYorkTimesService } from './services/new-york-times';
 import { GoodNewsService } from './services/good-news.service';
 import { HttpClientModule } from '@angular/common/http';
+import { NewsListComponent } from './news-list/news-list.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NewsListComponent
   ],
   imports: [
     BrowserModule,
