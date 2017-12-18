@@ -7,11 +7,13 @@ import { NewYorkTimesService } from './services/new-york-times';
 import { GoodNewsService } from './services/good-news.service';
 import { HttpClientModule } from '@angular/common/http';
 import { NewsListComponent } from './news-list/news-list.component';
+import { ReplaceGoodNews } from './pipe/newsDescription.pipe'; // import our pipe here
 
 @NgModule({
   declarations: [
     AppComponent,
-    NewsListComponent
+    NewsListComponent,
+    ReplaceGoodNews
   ],
   imports: [
     BrowserModule,

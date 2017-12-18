@@ -5,6 +5,8 @@ import { Observable } from 'rxjs/Observable';
 import { OnInit } from '@angular/core/src/metadata/lifecycle_hooks';
 import { Parser, parseString } from 'xml2js';
 import { Article } from '../objects';
+
+
 @Component({
     selector: 'news-list',
     templateUrl: './news-list.component.html',
@@ -45,11 +47,11 @@ export class NewsListComponent implements OnInit {
         res=>{
           parseString(
                      res, function(err, result) {
-                         component.news = result.rss.channel[0].item
-                         console.log(result);
+                         component.news = <Article[]>result.rss.channel[0].item
                      }
                  )
         }
       );
     }
+
 }
