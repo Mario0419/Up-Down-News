@@ -2,6 +2,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { HttpHeaders } from '@angular/common/http/src/headers';
+import { parseString } from 'xml2js';
+import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class NewYorkTimesService {
@@ -26,14 +28,15 @@ export class NewYorkTimesService {
 
     }
 
-    retrieveNews(category: string) {
+    retrieveNews(category: string): Observable<string> {
+        var headers = new Headers();
+        headers.append('Accept', 'application/xml');
         let url = this.rssHtml + category + ".xml";
-        this.http.get(url , {
-            responseType: 'text'
-        }).subscribe(
-            res => {
-                console.log(res);
+        return this.http.get(url , {
+            responseType: 'text',
+            headers: {
+                'Accept': 'application/xml'
             }
-        );
+        });
     }
 }
