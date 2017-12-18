@@ -45,10 +45,12 @@ export class NewsListComponent implements OnInit {
     }
 
     retrieveGoodNews(){
+      var component = this;
       this.goodnewsService.retrieveGoodNews("news-health/feed/").subscribe(
         res=>{
           parseString(
                      res, function(err, result) {
+                         component.news = result.rss.channel[0].item
                          console.log(result);
                      }
                  )
