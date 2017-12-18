@@ -1,6 +1,6 @@
 <div *ngIf="news">
     <div *ngFor="let new of news">
         <h1>{{new.title}}</h1>
-        <h4 [innerHTML]="new.description"></h4>
+        <h4 [innerHTML]="new.description[0] | replaceGoodNews"></h4>
     </div>
 </div>

@@ -9,6 +9,7 @@ import { NewsService } from './services/news.service';
 import { HttpClientModule } from '@angular/common/http';
 import { NewsListComponent } from './news-list/news-list.component';
 import { RouterModule, Routes} from '@angular/router';
+import { ReplaceGoodNews } from './pipe/newsDescription.pipe'; // import our pipe here
 
 const appRoutes: Routes = [
   {
@@ -18,7 +19,8 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    NewsListComponent
+    NewsListComponent,
+    ReplaceGoodNews
   ],
   imports: [
     BrowserModule,
