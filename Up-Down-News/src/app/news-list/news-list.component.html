@@ -1,6 +1,14 @@
-<div *ngIf="news">
+<div class="container" *ngIf="news">
     <div *ngFor="let new of news">
-        <h1>{{new.title}}</h1>
-        <h4 [innerHTML]="new.description[0] | replaceGoodNews"></h4>
+        <div class="card">
+            <div class="card-block">
+                <h4 class="card-title">{{new.title}}</h4>
+                <p class="card-text">{{new.pubDate | date: 'MM/dd/yyyy'}}</p>
+                <p class="card-text" [innerHTML]="new.description[0] | replaceGoodNews"></p>
+                <a href="{{new.link}}" class="card-link">Original Story</a>
+            </div>
+
+        </div>
+        <br>
     </div>
 </div>
