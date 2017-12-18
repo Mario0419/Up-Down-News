@@ -4,6 +4,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 import { NewYorkTimesService } from './services/new-york-times';
+import { GoodNewsService } from './services/good-news.service';
 import { HttpClientModule } from '@angular/common/http';
 import { NewsListComponent } from './news-list/news-list.component';
 
@@ -17,7 +18,7 @@ import { NewsListComponent } from './news-list/news-list.component';
     NgbModule.forRoot(),
     HttpClientModule
   ],
-  providers: [NewYorkTimesService],
+  providers: [NewYorkTimesService,GoodNewsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
