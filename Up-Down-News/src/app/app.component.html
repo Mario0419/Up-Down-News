@@ -1,3 +1,25 @@
 <div class="container">
-    <news-list></news-list>
+    <nav class="nav justify-content-end">
+        <li class="nav-item">
+            <div ngbDropdown class="d-inline-block">
+                <button class="btn btn-outline-primary" id="newYorkTimesCategoryDropdown" ngbDropdownToggle>New York Times</button>
+                <div ngbDropdownMenu aria-labelledby="newYorkTimesCategoryDropdown">
+                    <div *ngFor="let category of newYorkTimesCategories">
+                        <button class="dropdown-item" (click)="navigate('newyorktimes', category)">{{category}}</button>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="nav-item">
+            <div ngbDropdown class="d-inline-block">
+                <button class="btn btn-outline-primary" id="goodNewsCategoryDropdown" ngbDropdownToggle>Good News</button>
+                <div ngbDropdownMenu aria-labelledby="goodNewsCategoryDropdown">
+                    <div *ngFor="let category of goodNewsCategories">
+                        <button class="dropdown-item" (click)="navigate('goodNews', category)">{{category}}</button>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </nav>
+    <router-outlet></router-outlet>
 </div>
