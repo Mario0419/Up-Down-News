@@ -5,13 +5,10 @@ import { Observable } from 'rxjs/Observable';
 import { OnInit } from '@angular/core/src/metadata/lifecycle_hooks';
 import { Parser, parseString } from 'xml2js';
 import { Article } from '../objects';
-<<<<<<< HEAD
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import 'rxjs/add/operator/switchMap';
 import { NewsService } from '../services/news.service';
-=======
 
->>>>>>> goodNews
 
 @Component({
     selector: 'news-list',
