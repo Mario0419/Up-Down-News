@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NewsListComponent } from './news-list/news-list.component';
 import { RouterModule, Routes} from '@angular/router';
 import { ReplaceGoodNews } from './pipe/newsDescription.pipe'; // import our pipe here
+import { PrettyOpts } from './pipe/prettyOpts.pipe';
 
 const appRoutes: Routes = [
   {
@@ -20,7 +21,8 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     NewsListComponent,
-    ReplaceGoodNews
+    ReplaceGoodNews,
+    PrettyOpts
   ],
   imports: [
     BrowserModule,
