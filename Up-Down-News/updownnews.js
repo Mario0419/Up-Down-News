@@ -16,7 +16,7 @@ app.get('/retrieve/newyorktimes/:category', function(req, res) {
 });
 
 app.get('news/goodNews/:category', function(req, res) {
-
+    request('http:')
 });
 // Add headers
 app.listen(3004);
