@@ -9,7 +9,7 @@ import { Observable } from 'rxjs/Observable';
 export class NewYorkTimesService {
 
     rssHtml: string = 'http://rss.nytimes.com/services/xml/rss/nyt/';
-
+    rssHtml2: string = 'http://localhost:3004/retrieve/newyorktimes/';
     categories: string[] = [
         'Sports',
         'CollegeFootball',
@@ -31,8 +31,8 @@ export class NewYorkTimesService {
     retrieveNews(category: string): Observable<string> {
         var headers = new Headers();
         headers.append('Accept', 'application/xml');
-        let url = this.rssHtml + category + ".xml";
-        return this.http.get(url , {
+        let url = this.rssHtml2;
+        return this.http.get(url + category , {
             responseType: 'text',
             headers: {
                 'Accept': 'application/xml'
