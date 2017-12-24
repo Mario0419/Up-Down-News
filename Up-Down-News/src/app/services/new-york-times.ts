@@ -9,7 +9,7 @@ import { Observable } from 'rxjs/Observable';
 export class NewYorkTimesService {
 
     rssHtml: string = 'http://rss.nytimes.com/services/xml/rss/nyt/';
-    rssHtml2: string = 'http://localhost:3004/retrieve/newyorktimes/';
+    rssHtml2: string = 'http://mx3.io:3004/retrieve/newyorktimes/';
     categories: string[] = [
         'Sports',
         'CollegeFootball',
