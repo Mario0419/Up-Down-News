@@ -5,9 +5,8 @@
                 <h4 class="card-title">{{new.title}}</h4>
                 <p class="card-text">{{new.pubDate | date: 'MM/dd/yyyy'}}</p>
                 <p class="card-text" [innerHTML]="new.description[0] | replaceGoodNews"></p>
-                <a href="{{new.link}}" class="card-link">Original Story</a>
+                <a href="{{new.link}}" target="_blank"  class="card-link">Original Story</a>
             </div>
-
         </div>
         <br>
     </div>

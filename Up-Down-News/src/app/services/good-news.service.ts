@@ -10,12 +10,12 @@ import { Article } from '../objects';
 @Injectable()
 export class GoodNewsService {
 
-  constructor(private http: HttpClient){
+  constructor(private http: HttpClient) {
 
   }
 
   rssHtml: string = 'https://www.goodnewsnetwork.org/category/';
-
+  rssHtml2: string = 'http://localhost:3004/retrieve/goodNews/';
   categories: string[] = [
     'news-health/feed/',
     'gnn-your-blogs/feed/',
@@ -29,10 +29,17 @@ export class GoodNewsService {
 
   ]
 
-  retrieveGoodNews(category: string):Observable<string>{
-    let url = this.rssHtml + category;
-    return this.http.get(url,{
-      responseType: 'text'
+  retrieveGoodNews(category: string): Observable<string> {
+    let url = this.rssHtml2 + category;
+    var headers = new Headers();
+
+    headers.append('Accept', 'application/xml');
+
+    return this.http.get(url, {
+      responseType: 'text',
+      headers: {
+        'Accept': 'application/xml'
+      }
     });
   }
 

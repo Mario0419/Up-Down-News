@@ -15,8 +15,12 @@ app.get('/retrieve/newyorktimes/:category', function(req, res) {
     })
 });
 
-app.get('news/goodNews/:category', function(req, res) {
-    request('http:')
+app.get('/retrieve/goodNews/:category/feed/', function(req, res) {
+    var url = "https://www.goodnewsnetwork.org/category/" + req.params.category + "/feed/";
+    console.log(url);
+    request(url, function(error, response, body) {
+        res.send(body);
+    })
 });
 // Add headers
 app.listen(3004);
