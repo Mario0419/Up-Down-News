@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { Article } from '../objects';
-
+import { AppSettings} from '../appSettings'; 
 
 
 
@@ -15,7 +15,7 @@ export class GoodNewsService {
   }
 
   rssHtml: string = 'https://www.goodnewsnetwork.org/category/';
-  rssHtml2: string = 'http://localhost:3004/retrieve/goodNews/';
+  rssHtml2: string = '/retrieve/goodNews/';
   categories: string[] = [
     'news-health/feed/',
     'gnn-your-blogs/feed/',
@@ -30,7 +30,7 @@ export class GoodNewsService {
   ]
 
   retrieveGoodNews(category: string): Observable<string> {
-    let url = this.rssHtml2 + category;
+    let url = AppSettings.SERVER_ENDPOINT + this.rssHtml2 + category;
     var headers = new Headers();
 
     headers.append('Accept', 'application/xml');
